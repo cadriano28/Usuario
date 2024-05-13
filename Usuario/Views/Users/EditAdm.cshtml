@@ -1,0 +1,61 @@
+﻿@model Usuario.Models.Users
+
+@{
+    ViewData["Title"] = "EditAdm";
+}
+
+<h1>Edit</h1>
+
+<h4>Users</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditAdm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserId" />
+            <div class="form-group">
+                <label asp-for="UserNome" class="control-label"></label>
+                <input asp-for="UserNome" class="form-control" />
+                <span asp-validation-for="UserNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserCpf" class="control-label"></label>
+                <input asp-for="UserCpf" class="form-control" />
+                <span asp-validation-for="UserCpf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserTelefone" class="control-label"></label>
+                <input asp-for="UserTelefone" class="form-control" />
+                <span asp-validation-for="UserTelefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserLogin" class="control-label"></label>
+                <input asp-for="UserLogin" class="form-control" />
+                <span asp-validation-for="UserLogin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserSenha" class="control-label"></label>
+                <input asp-for="UserSenha" class="form-control" />
+                <span asp-validation-for="UserSenha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserNivel" class="control-label"></label>
+                <input asp-for="UserNivel" class="form-control" />
+                <span asp-validation-for="UserNivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserStatus" class="control-label"></label>
+                <input asp-for="UserStatus" class="form-control" />
+                <span asp-validation-for="UserStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Adm">Back to List</a>
+</div>
+

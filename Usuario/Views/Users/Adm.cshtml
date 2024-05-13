@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Usuario.Models.Users>
+
+@{
+    ViewData["Title"] = "Painel Administrativo";
+}
+
+<h1>Administrativo</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="d-flex flex-wrap">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 300px; margin-right: 10px; margin-bottom: 10px;">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.UserNome)</h5>
+                <p class="card-text">
+                    <strong>CPF:</strong> @Html.DisplayFor(modelItem => item.UserCpf)<br />
+                    <strong>Telefone:</strong> @Html.DisplayFor(modelItem => item.UserTelefone)<br />
+                    <strong>Login:</strong> @Html.DisplayFor(modelItem => item.UserLogin)<br />
+                    <strong>Senha:</strong> @Html.DisplayFor(modelItem => item.UserSenha)<br />
+                    <strong>Nível:</strong> @Html.DisplayFor(modelItem => item.UserNivel)<br />
+                    <strong>Status:</strong> @Html.DisplayFor(modelItem => item.UserStatus)
+                </p>
+                <div class="d-flex justify-content-evenly">
+                    <a style="width: 80px,font-size: 14px;" href="@Url.Action("EditAdm", new { id = item.UserId })" class="btn btn-primary">Editar</a>
+                    <a style="width: 80px,font-size: 14px;" href="@Url.Action("DetailsAdm", new { id = item.UserId })" class="btn btn-secondary">Detalhes</a>
+                    <a style="width: 80px,font-size: 14px;" href="@Url.Action("Delete", new { id = item.UserId })" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

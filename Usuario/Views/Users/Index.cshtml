@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Usuario.Models.Users>
+
+@{
+    ViewData["Title"] = "Painel do Usuario";
+    var nome = "";
+}
+
+<h1>Bem vindo de Volta!</h1>
+<br />
+<div class="d-flex flex-wrap">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 300px; margin-right: 10px; margin-bottom: 10px;">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.UserNome)</h5>
+                <p class="card-text">
+                    <strong>CPF:</strong> @Html.DisplayFor(modelItem => item.UserCpf)<br />
+                    <strong>Telefone:</strong> @Html.DisplayFor(modelItem => item.UserTelefone)<br />
+                    <strong>Login:</strong> @Html.DisplayFor(modelItem => item.UserLogin)<br />
+                    <strong>Senha:</strong> @Html.DisplayFor(modelItem => item.UserSenha)<br />
+                    <strong>Nível:</strong> @Html.DisplayFor(modelItem => item.UserNivel)<br />
+                    <strong>Status:</strong> @Html.DisplayFor(modelItem => item.UserStatus)
+                </p>
+                <div class="d-flex justify-content-evenly">
+                    <a style="width: 100px" href="@Url.Action("Edit", new { id = item.UserId })" class="btn btn-primary">Editar</a>
+                    <a style="width: 100px" href="@Url.Action("Details", new { id = item.UserId })" class="btn btn-secondary">Detalhes</a>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
